@@ -20,3 +20,4 @@ http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.end('Hello World!');
   }).listen(8080);
+  //*this code is creating a server and saying, “any time we get a network request, run this callback function”. This function happens to respond with the text ‘Hello World!’.
