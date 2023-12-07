@@ -13,3 +13,10 @@ As long as it can take in an HTTP request and spit out some HTML, you can probab
 
 //!Node.JS
 /*it was impossible to use JavaScript to write any kind of program that was not a website. Node brings JavaScript out of browser-land. This allows developers to use JavaScript to accomplish pretty much anything that other popular server-side languages such as Ruby, PHP, C# and Python can do.*/
+/*Node is an asynchronous event driven JavaScript runtime. In this context asynchronous means that when you write your code you do not try to predict the exact sequence in which every line will run.*/
+
+//?Example
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('Hello World!');
+  }).listen(8080);
