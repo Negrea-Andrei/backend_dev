@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
   let filePath = "." + req.url + ".html";
 
   //?if the path is empty then redirect to the index page
-  if (filePath === "./") {
+  if (filePath === "./.html") {
     filePath = "./index.html";
   }
 
@@ -22,17 +22,14 @@ const server = http.createServer((req, res) => {
     if (err) {
       if (err.code == "ENOENT") {
         fs.readFile("./404.html", (err, content) => {
-          res.writeHead(404, { "Content-Type": "text/html" });
-          res.end(content, "utf-8");
+          res.end(content);
         });
       } else {
-        res.writeHead(500);
         res.end("Error: " + err.code);
       }
       //*If its ok then send back a response 200 and the content of the file from the path
     } else {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.end(content, "utf-8");
+      res.end(content);
     }
   });
 });
