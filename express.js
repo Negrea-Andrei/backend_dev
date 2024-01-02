@@ -6,7 +6,7 @@ const square = require("./square"); // Here we require() the name of the file wi
 console.log(`The area of a square with a width of 4 is ${square.area(4)}`);
 
 
-app.get("/", function (req, res) {
+app.get("/aaa", function (req, res) {
   res.send("Hello World!");
 });
 
