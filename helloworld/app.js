@@ -4,6 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Set up mongoose connection
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+const mongoDB = "mongodb+srv://negreaandrei1997:BV4Jg9KpJFkBMaue@cluster0.jya0bic.mongodb.net/";
+
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
